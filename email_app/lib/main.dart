@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/list_screen.dart'; // Asegúrate de que el nombre y la ruta sean correctos
+import 'screens/list_screen.dart';
 
 void main() {
   runApp(const CorreoApp());
@@ -11,12 +11,12 @@ class CorreoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lista de Correos', // Título adaptado
+      title: 'Lista de Correos', 
       theme: ThemeData(
-        primarySwatch: Colors.pink, // Cambiado a rosa para diferenciar
+        primarySwatch: Colors.pink, 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: PantallaLista(), // Cambiar a la clase que contiene la pantalla principal
+      home: PantallaLista(), 
     );
   }
 }
