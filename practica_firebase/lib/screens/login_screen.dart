@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xFF4facfe), Color(0xFF00f2fe)],
+          colors: [Color.fromARGB(64, 6, 133, 245), Color.fromARGB(255, 254, 8, 0)],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -82,7 +82,7 @@ class LoginScreen extends StatelessWidget {
                       context.read<AuthBloc>().add(LoginRequested(email, password));
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF4facfe),
+                      backgroundColor: const Color.fromARGB(255, 247, 30, 2),
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     ),
@@ -93,7 +93,7 @@ class LoginScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushNamed(context, '/register');
                     },
-                    child: const Text('¿No tienes una cuenta? Regístrate', style: TextStyle(color: Color(0xFF4facfe))),
+                    child: const Text('¿No tienes una cuenta? Regístrate', style: TextStyle(color: Color.fromARGB(255, 254, 79, 79))),
                   ),
                 ],
               ),

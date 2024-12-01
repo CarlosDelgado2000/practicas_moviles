@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:practica_firebase/screens/home_screen.dart';
-import 'package:practica_firebase/screens/login_screen.dart';
-import 'package:practica_firebase/screens/register_screen.dart';
-import 'package:practica_firebase/service/firestore_service.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'bloc/auth_bloc.dart';
+import 'service/firebase_auth_service.dart';
+import 'screens/login_screen.dart';
+import 'screens/register_screen.dart';
+import 'screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,21 +17,22 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Tarea Flutter Firebase',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.blueGrey[50],
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AuthBloc(FirebaseAuthService()),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Firebase',
+        initialRoute: '/login',
+        routes: {
+          '/login': (context) => LoginScreen(),
+          '/register': (context) => RegisterScreen(),
+          '/home': (context) => HomeScreen(user: FirebaseAuth.instance.currentUser!),
+        },
       ),
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/login',
-      routes: {
-        '/login': (context) => LoginScreen(),
-        '/register': (context) => RegisterScreen(),
-        '/home': (context) => HomeScreen(
-              user: FirebaseAuth.instance.currentUser!,
-            ),
-      },
     );
   }
 }

@@ -71,7 +71,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF6A11CB), Color(0xFF2575FC)],
+            colors: [Color.fromARGB(255, 203, 57, 17), Color(0xFF2575FC)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -214,7 +214,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ElevatedButton(
                         onPressed: () => _register(context),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF6A11CB),
+                          backgroundColor: const Color.fromARGB(255, 250, 4, 4),
                           padding: const EdgeInsets.symmetric(vertical: 14),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),

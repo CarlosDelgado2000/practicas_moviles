@@ -112,7 +112,7 @@ class HomeScreen extends StatelessWidget {
                     Expanded(
                       child: Container(
                         decoration: const BoxDecoration(
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 107, 145, 206),
                           borderRadius: BorderRadius.vertical(
                             top: Radius.circular(30),
                           ),
