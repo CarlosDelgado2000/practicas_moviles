@@ -22,9 +22,9 @@ class _CardAppState extends State<CardApp> {
   // Variables para almacenar los valores actualizados
   String name = 'Triki';
   String profession = 'awesome kitty';
-  String favorite = 'I love tuna, ham and milk';
-  String people = 'I own two people';
-  String age = 'I am 2 months old';
+  String favorite = 'I like encebollado, ceviche and having fun';
+  String people = 'I have a dream';
+  String age = 'I am 3 years old';
 
   @override
   void dispose() {

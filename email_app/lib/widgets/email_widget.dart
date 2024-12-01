@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart'; // Importar el paquete
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../model/email.dart';
-import '../screens/detail_screen.dart'; // Asegúrate de que esta ruta coincida con tu estructura
+import '../screens/detail_screen.dart'; 
 
 class EmailWidget extends StatelessWidget {
-  final Correo correo; // Cambiado a Correo
-  final VoidCallback onMarcarComoLeido; // Cambiado a español
+  final Correo correo; 
+  final VoidCallback onMarcarComoLeido; 
 
   const EmailWidget({
     super.key,
@@ -17,15 +17,15 @@ class EmailWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        correo.asunto, // Cambiado a asunto
+        correo.asunto, 
         style: TextStyle(
           fontWeight: correo.leido ? FontWeight.normal : FontWeight.bold,
           color: correo.leido ? Colors.grey : Colors.black,
         ),
       ),
-      subtitle: Text(correo.remitente), // Cambiado a remitente
+      subtitle: Text(correo.remitente),
       trailing: correo.leido
-          ? null // No mostrar nada si ya está leído
+          ? null 
           : Row(
               mainAxisSize: MainAxisSize.min,
               children: [
